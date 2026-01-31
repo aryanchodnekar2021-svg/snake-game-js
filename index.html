@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Snake Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <button class="icon-btn" onclick="openSettings()" title="Settings">⚙️</button>
+        
+        <h1>SNAKE PRO</h1>
+        
+        <div class="score-board">
+            <div class="score-item">Score <span class="score-value" id="score">0</span></div>
+            <div class="score-item">Best <span class="score-value" id="highScore">0</span></div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </div>
+        
+        <div class="controls-hint">Press Arrow Keys or WASD to Move</div>
+
+        <div class="overlay" id="gameOverOverlay">
+            <h2>Game Over</h2>
+            <p>You scored <span id="finalScore" style="color: #4facfe; font-weight: bold;">0</span> points!</p>
+            <button class="btn-primary" onclick="restartGame()">Play Again</button>
+        </div>
+
+        <div class="overlay" id="settingsOverlay">
+            <h3 style="color: white;">Game Settings</h3>
+            
+            <div class="setting-group">
+                <label>Game Speed</label>
+                <input type="range" id="speedSlider" min="50" max="300" step="10" style="direction: rtl">
+            </div>
+
+            <div class="setting-group">
+                <label>Snake Color</label>
+                <input type="color" id="snakeColorPicker" value="#4ecca3">
+            </div>
+            
+            <div class="setting-group">
+                <label>Fruit Color</label>
+                <input type="color" id="foodColorPicker" value="#ff6b6b">
+            </div>
+
+            <div class="setting-group">
+                <label>Background</label>
+                <input type="color" id="bgColorPicker" value="#1a1a1a">
+            </div>
+
+            <button class="btn-primary" onclick="saveSettings()">Resume Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
